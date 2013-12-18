@@ -1,14 +1,19 @@
 MODLOGGER - OxWall Plugin
-=========================
+-------------------------
 
 [![GNU GPL v3.0](http://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl.html)
 
 ModLogger is an Oxwall plugin that help admins keep track of moderators' activities. Whether they deleted/suspended your users or did any shady operation you will have the evidences.
 
-LICENSE
-=======
+Changes Log
+-----------
 
-Copyright (C) 2013 <http://oxwall.songphi.net>
+* There is not yet any release
+
+LICENSE
+-------
+
+Copyright (C) 2013 <http://oxwall.songphi.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
