@@ -5,6 +5,15 @@
 */
 class MODLOGGER_BOL_Service 
 {
+  protected static $classInstance = null;
+
+  public static function getInstance() {
+    if ( !( self::$classInstance instanceof MODLOGGER_BOL_Service ) ) {
+      self::$classInstance = new self();
+    }
+    return self::$classInstance;
+  }
+
   public static function dbInject() {
     $dbo = &OW::getDbo();
 
@@ -17,6 +26,8 @@ class MODLOGGER_BOL_Service
     self::setDatabasePrivatePropertyValue($dbo,'queryExecTime',0);
     self::setDatabasePrivatePropertyValue($dbo,'totalQueryExecTime',0);
     self::setDatabasePrivatePropertyValue($dbo,'queryLog',array());
+
+    self::getInstance();
   }
 
   protected static function setDatabasePrivatePropertyValue(&$obj, $propName, $value) {
@@ -33,7 +44,7 @@ class MODLOGGER_BOL_Service
     return $prop->getValue($dbo);
   }
 
-  public static function collectLogs() {
+  public function __destruct() {
     var_dump(serialize(OW::getDbo()->getQueryLog()));
   }
 }
