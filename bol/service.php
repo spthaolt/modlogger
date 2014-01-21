@@ -84,9 +84,9 @@ class MODLOGGER_BOL_Service
   }
 
   public static function getRoute() {
-    try {
+    if (is_object(OW::getRouter()))
       return OW::getRouter()->route();
-    } catch ( Exception $e ) {
+    } else {
       return false;
     }
   }
